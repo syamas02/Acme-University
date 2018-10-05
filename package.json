@@ -2,6 +2,9 @@
   "name": "acme-school-practice",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "npm": "6.4.1"
+  },
   "main": "server.js",
   "dependencies": {
     "axios": "^0.18.0",
@@ -31,7 +34,7 @@
     ]
   },
   "scripts": {
-    "start": "node ./server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "./node_modules/webpack/bin/webpack.js",
     "start:dev": "npm run webpack -- --watch --mode=development & DATABASE_URL=postgres://localhost/acme-school nodemon server.js --ignore src/ --ignore dist",
