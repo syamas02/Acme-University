@@ -33,10 +33,10 @@ const SchoolForm = ({ handleChange, onSave, school, onDelete }) => {
       <br />
       <div className="bt">
         <Button
+          disabled={!(school.name && school.address && school.description)}
           color="primary"
           type="submit"
           onClick={onSave}
-          disabled={!school.name}
         >
           Save
         </Button>

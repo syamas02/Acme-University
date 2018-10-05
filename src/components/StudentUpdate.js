@@ -27,7 +27,7 @@ class StudentUpdate extends Component {
           firstname: student.firstname,
           lastname: student.lastname,
           gpa: student.gpa,
-          schoolId: student.schoolId,
+          schoolId: student.schoolId === null ? '' : student.schoolId,
         })
       );
   }

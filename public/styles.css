@@ -75,13 +75,12 @@ input {
 .schoolUpdate {
   display: flex;
   flex-direction: row;
-  padding: 15px;
-  margin: 10px 100;
+  margin: 20px;
 }
 .schoolCreate {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 20px;
 }
 
 .enrollment {

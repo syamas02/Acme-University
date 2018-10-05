@@ -16,8 +16,13 @@ class SchoolCreate extends Component {
   }
   onSave(ev) {
     ev.preventDefault();
+
+    const { name, address, description } = this.state;
+    const objSchool = { name, address, description };
+
+    console.log('schoolobj', objSchool);
     this.props
-      .createSchool(this.state)
+      .createSchool(objSchool)
       .then(() => this.props.history.push('/schools'));
   }
   handleChange(ev) {
