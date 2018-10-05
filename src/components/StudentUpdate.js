@@ -63,15 +63,19 @@ class StudentUpdate extends Component {
     const { schools } = this.props;
     const { handleChange, onSave, onDelete } = this;
     return (
-      <div className="studentUpdate">
-        <StudentForm
-          handleChange={handleChange}
-          onSave={onSave}
-          onDelete={onDelete}
-          schools={schools}
-          student={student}
-        />
-        <hr />
+      <div>
+        <h4>
+          {student.firstname} {student.lastname}
+        </h4>
+        <div className="studentUpdate">
+          <StudentForm
+            handleChange={handleChange}
+            onSave={onSave}
+            onDelete={onDelete}
+            schools={schools}
+            student={student}
+          />
+        </div>
       </div>
     );
   }

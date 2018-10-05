@@ -3,9 +3,10 @@ import { Button } from 'reactstrap';
 
 const SchoolForm = ({ handleChange, onSave, school, onDelete }) => {
   return (
-    <form name="schoolCreate">
+    <form name="schoolCreateUpdate">
       <label htmlFor="name">name: </label>
       <input
+        className="mytext"
         name="name"
         type="text"
         value={school.name}
@@ -14,6 +15,7 @@ const SchoolForm = ({ handleChange, onSave, school, onDelete }) => {
       <br />
       <label htmlFor="address">address: </label>
       <input
+        className="mytext"
         name="address"
         type="text"
         value={school.address}
@@ -22,6 +24,7 @@ const SchoolForm = ({ handleChange, onSave, school, onDelete }) => {
       <br />
       <label htmlFor="description">description: </label>
       <input
+        className="mytext"
         name="description"
         value={school.description}
         type="text"

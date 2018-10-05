@@ -12,14 +12,17 @@ const Nav = ({ schools, students, path }) => {
     return style;
   };
   return (
-    <div className="nav">
-      <Link style={selected('/schools')} to="/schools">
-        Schools ({schools.length}){' '}
-      </Link>
-      &nbsp;&nbsp;&nbsp;
-      <Link style={selected('/students')} to="/students">
-        Students ({students.length}){' '}
-      </Link>
+    <div>
+      <div className="nav">
+        <Link style={selected('/schools')} to="/schools">
+          Schools ({schools.length}){' '}
+        </Link>
+        &nbsp;&nbsp;&nbsp;
+        <Link style={selected('/students')} to="/students">
+          Students ({students.length}){' '}
+        </Link>
+      </div>
+      <img src="/public/school.jpg" alt="" width="450" height="75" />
     </div>
   );
 };

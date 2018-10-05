@@ -35,6 +35,7 @@ class StudentCreate extends Component {
 
     return (
       <div className="studentCreate">
+        <h4>Student</h4>
         <StudentForm
           handleChange={handleChange}
           onSave={onSave}

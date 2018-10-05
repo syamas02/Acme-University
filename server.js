@@ -13,8 +13,6 @@ app.listen(port, () => {
 syncAndSeed();
 
 app.use(express.json());
-app.use(express.urlencoded());
-
 app.use('/dist', express.static(path.join(__dirname, '/dist')));
 app.use('/public', express.static(path.join(__dirname, '/public')));
 app.get('/', (req, res, next) => {
@@ -85,6 +83,6 @@ app.delete('/api/schools/:id', (req, res, next) => {
     .catch(next);
 });
 
-// app.use((err, req, res, next) => {
-//   res.status(500);
-// });
+app.use((err, req, res, next) => {
+  res.status(err.status || 500).send({ error: err.message });
+});

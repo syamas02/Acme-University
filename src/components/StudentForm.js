@@ -6,6 +6,7 @@ const StudentForm = ({ handleChange, onSave, onDelete, schools, student }) => {
     <form name="studentInfo">
       <label htmlFor="fname">first name: </label>
       <input
+        className="mytext"
         name="firstname"
         type="text"
         value={student.firstname}
@@ -14,6 +15,7 @@ const StudentForm = ({ handleChange, onSave, onDelete, schools, student }) => {
       <br />
       <label htmlFor="lname">last name: </label>
       <input
+        className="mytext"
         name="lastname"
         type="text"
         value={student.lastname}

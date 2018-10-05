@@ -38,10 +38,15 @@ class Enrollment extends Component {
     const { onRegister, onUnregister, handleChange } = this;
     console.log('students: ', students);
     return (
-      <div>
-        <div>
-          <select name="id1" value={this.state.id1 * 1} onChange={handleChange}>
-            <option>--select student to unenroll--</option>
+      <div className="enrollUnenroll">
+        <div className="unenroll">
+          <select
+            className="myselect"
+            name="id1"
+            value={this.state.id1 * 1}
+            onChange={handleChange}
+          >
+            <option value="">--select student to unenroll--</option>
             {students.map(
               student =>
                 student.schoolId === this.props.id ? (
@@ -51,13 +56,25 @@ class Enrollment extends Component {
                 ) : null
             )}
           </select>
-          <Button size="sm" color="warning" onClick={onUnregister}>
-            Unenroll Student
-          </Button>
+          <div className="enrollmentButtons">
+            <Button
+              disabled={!this.state.id1}
+              size="sm"
+              color="warning"
+              onClick={onUnregister}
+            >
+              Unenroll Student
+            </Button>
+          </div>
         </div>
-        <div>
-          <select name="id2" value={this.state.id2 * 1} onChange={handleChange}>
-            <option>--select student to enroll--</option>
+        <div className="enroll">
+          <select
+            className="myselect"
+            name="id2"
+            value={this.state.id2 * 1}
+            onChange={handleChange}
+          >
+            <option value="">--select student to enroll--</option>
             {students.map(
               student =>
                 student.schoolId !== this.props.id ? (
@@ -67,9 +84,16 @@ class Enrollment extends Component {
                 ) : null
             )}
           </select>
-          <Button size="sm" color="info" onClick={onRegister}>
-            Enroll Student
-          </Button>
+          <div className="enrollmentButtons">
+            <Button
+              disabled={!this.state.id2}
+              size="sm"
+              color="info"
+              onClick={onRegister}
+            >
+              Enroll Student
+            </Button>
+          </div>
         </div>
       </div>
     );

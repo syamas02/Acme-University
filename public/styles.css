@@ -8,6 +8,19 @@ body {
   margin-left: 20px;
 }
 
+/* body {
+  background: linear-gradient(to bottom, #69a7c6 0%, #f2be82 100%);
+  height: 100%;
+  font-family: 'Tangerine', serif;
+  font-size: 48px;
+  margin-left: 20px;
+} */
+
+h1 {
+  font-family: 'Tangerine', serif;
+  font-size: 48px;
+}
+
 ul {
   list-style-type: circle;
 }
@@ -34,7 +47,7 @@ input {
 .nav {
   display: flex;
   text-align: center;
-  margin: 20px 0 0;
+  margin: 10px 0 10 0;
   padding: 10px 0;
 }
 .bt {
@@ -45,27 +58,43 @@ input {
   flex-direction: row;
   justify-content: space-between;
 }
+.enrollmentButtons {
+  display: flex;
+  padding: 2px;
+  margin-bottom: 10px;
+}
 .studentUpdate {
   display: flex;
   flex-direction: row;
 }
 .studentCreate {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 10px;
 }
 .schoolUpdate {
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  padding: 15px;
+  margin: 10px 100;
 }
 .schoolCreate {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 10px;
 }
+
 .enrollment {
   display: flex;
   flex-direction: column;
   padding: 10px;
+}
+
+.myselect {
+  width: 230px;
+}
+.mytext {
+  width: 300px;
 }
 
 .students {
