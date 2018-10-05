@@ -1,0 +1,81 @@
+html {
+  height: 100%;
+}
+body {
+  background: linear-gradient(to bottom, #69a7c6 0%, #f2be82 100%);
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-left: 20px;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 5px;
+  align-items: left;
+}
+label {
+  width: 100px;
+  margin-right: 10px;
+}
+input {
+  margin-left: 10x;
+  padding: 1px;
+  align-items: right;
+}
+.app {
+  display: block;
+  align-items: center;
+  flex-direction: column;
+}
+.nav {
+  display: flex;
+  text-align: center;
+  margin: 20px 0 0;
+  padding: 10px 0;
+}
+.bt {
+  display: flex;
+  margin-left: 10x;
+  padding: 1px;
+  align-items: left;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.studentUpdate {
+  display: flex;
+  flex-direction: row;
+}
+.studentCreate {
+  display: flex;
+  flex-direction: row;
+}
+.schoolUpdate {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.schoolCreate {
+  display: flex;
+  flex-direction: row;
+}
+.enrollment {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.students {
+  color: black;
+}
+
+.schools {
+  color: black;
+}
+/* .nav {
+  display: flex;
+  font-size: 12px;
+} */
