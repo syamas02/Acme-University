@@ -33,15 +33,15 @@ class StudentUpdate extends Component {
   }
 
   onSave(ev) {
-    const { schoolId } = this.state;
-    const objSchool = {};
-    Object.assign(objSchool, this.state, { id: this.props.id });
-    console.log(objSchool);
-    if (schoolId !== '') objSchool.schoolId = schoolId * 1;
-
     ev.preventDefault();
+    const { schoolId } = this.state;
+    const objStudent = {};
+
+    Object.assign(objStudent, this.state, { id: this.props.id });
+    if (schoolId === '') objStudent.schoolId = null;
+
     this.props
-      .updateStudent(objSchool)
+      .updateStudent(objStudent)
       .then(() => this.props.history.push('/students'));
   }
   onDelete(ev) {

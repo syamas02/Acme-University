@@ -12,19 +12,20 @@ class StudentCreate extends Component {
       gpa: '',
       schoolId: this.props.history.location.studentId
         ? this.props.history.location.studentId.id
-        : null,
+        : '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.onSave = this.onSave.bind(this);
   }
   onSave(ev) {
-    const { schoolId } = this.state;
-    const objSchool = {};
-    Object.assign(objSchool, this.state, { schoolId, id: this.props.id });
-
     ev.preventDefault();
+    const objStudent = {};
+
+    Object.assign(objStudent, this.state, { id: this.props.id });
+    if (objStudent.schoolId === '') objStudent.schoolId = null;
+
     this.props
-      .createStudent(objSchool)
+      .createStudent(objStudent)
       .then(() => this.props.history.push('/students'));
   }
 

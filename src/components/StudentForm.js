@@ -35,12 +35,8 @@ const StudentForm = ({ handleChange, onSave, onDelete, schools, student }) => {
       />
       <br />
       <label>School</label>
-      <select
-        name="schoolId"
-        value={student.schoolId * 1}
-        onChange={handleChange}
-      >
-        <option value={null}>--select school-- </option>
+      <select name="schoolId" value={student.schoolId} onChange={handleChange}>
+        <option value="">--select school-- </option>
         {schools.map(school => {
           return (
             <option key={school.id} value={school.id}>
