@@ -26,7 +26,6 @@ class SchoolUpdate extends Component {
     ev.preventDefault();
     this.props
       .updateSchool(Object.assign({}, this.state, { id: this.props.id }))
-      // .updateSchool({ ...this.state, id: this.props.id })
       .then(() => this.props.history.push('/schools'));
   }
 
