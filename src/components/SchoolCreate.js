@@ -32,13 +32,15 @@ class SchoolCreate extends Component {
     const school = this.state;
     const { handleChange, onSave } = this;
     return (
-      <div className="schoolCreate">
+      <div>
         <h4>School</h4>
-        <SchoolForm
-          handleChange={handleChange}
-          onSave={onSave}
-          school={school}
-        />
+        <div className="schoolCreate">
+          <SchoolForm
+            handleChange={handleChange}
+            onSave={onSave}
+            school={school}
+          />
+        </div>
       </div>
     );
   }

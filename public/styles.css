@@ -20,7 +20,9 @@ h1 {
   font-family: 'Tangerine', serif;
   font-size: 48px;
 }
-
+h4 {
+  margin: 10 0 0 20;
+}
 ul {
   list-style-type: circle;
 }
@@ -66,11 +68,12 @@ input {
 .studentUpdate {
   display: flex;
   flex-direction: row;
+  margin: 20px;
 }
 .studentCreate {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 20px;
 }
 .schoolUpdate {
   display: flex;

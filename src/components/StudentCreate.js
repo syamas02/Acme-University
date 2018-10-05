@@ -39,14 +39,16 @@ class StudentCreate extends Component {
     const { handleChange, onSave } = this;
 
     return (
-      <div className="studentCreate">
+      <div>
         <h4>Student</h4>
-        <StudentForm
-          handleChange={handleChange}
-          onSave={onSave}
-          schools={schools}
-          student={student}
-        />
+        <div className="studentCreate">
+          <StudentForm
+            handleChange={handleChange}
+            onSave={onSave}
+            schools={schools}
+            student={student}
+          />
+        </div>
       </div>
     );
   }
