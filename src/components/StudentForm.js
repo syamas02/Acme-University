@@ -48,15 +48,7 @@ const StudentForm = ({ handleChange, onSave, onDelete, schools, student }) => {
       <br />
       <div className="bt">
         <Button
-          disabled={
-            !(
-              student.firstname &&
-              student.lastname &&
-              student.gpa &&
-              student.gpa >= 0 &&
-              student.gpa <= 4
-            )
-          }
+          disabled={!(student.firstname && student.lastname)}
           color="primary"
           type="submit"
           onClick={onSave}

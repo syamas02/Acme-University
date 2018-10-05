@@ -22,7 +22,8 @@ class StudentCreate extends Component {
     const objStudent = {};
 
     Object.assign(objStudent, this.state, { id: this.props.id });
-    if (objStudent.schoolId === '') objStudent.schoolId = null;
+    if (objStudent.schoolId === '') delete objStudent.schoolId;
+    if (objStudent.gpa === '') delete objStudent.gpa;
 
     this.props
       .createStudent(objStudent)
