@@ -23,14 +23,15 @@ const StudentForm = ({ handleChange, onSave, onDelete, schools, student }) => {
       />
       <br />
       <label htmlFor="gpa">GPA: </label>
+
       <input
         style={{ width: '100px' }}
         name="gpa"
         type="number"
-        min="0"
-        max="4"
-        step=".1"
-        value={student.gpa}
+        min="0.0"
+        max="4.0"
+        step=".01"
+        value={student.gpa || ''}
         onChange={handleChange}
       />
       <br />
@@ -53,13 +54,16 @@ const StudentForm = ({ handleChange, onSave, onDelete, schools, student }) => {
           type="submit"
           onClick={onSave}
         >
-          Save
+          > Save
         </Button>
+
         {onDelete ? (
           <Button color="danger" type="submit" onClick={onDelete}>
             Delete
           </Button>
-        ) : null}
+        ) : (
+          ''
+        )}
       </div>
     </form>
   );

@@ -52,6 +52,9 @@ input {
   align-items: center;
   flex-direction: column;
 }
+.nav-tab {
+  margin-bottom: 10px;
+}
 .nav {
   display: flex;
   text-align: center;
@@ -61,6 +64,7 @@ input {
   background-color: gainsboro;
   border-radius: 0 0 10px 10px;
   font-family: 'Work Sans', sans-serif;
+  margin-bottom: 0;
 }
 .bt {
   display: flex;

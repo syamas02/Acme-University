@@ -12,7 +12,7 @@ const Nav = ({ schools, students, path }) => {
     return style;
   };
   return (
-    <div>
+    <div className="nav-tab">
       <div className="nav">
         <ul className="nav nav-tabs">
           &nbsp;

@@ -6,7 +6,8 @@ const Student = ({ student, school }) => {
   return (
     <li>
       <Link className="students" to={`/students/${student.id}`}>
-        {student.firstname} {student.lastname} ({school() ? school().name : ''})
+        {student.firstname} {student.lastname} (
+        {school() ? school().name : 'unenrolled'})
       </Link>
     </li>
   );

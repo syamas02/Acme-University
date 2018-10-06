@@ -18,6 +18,7 @@ class StudentUpdate extends Component {
     this.onDelete = this.onDelete.bind(this);
     this.fetchStudentByID(this.props.id);
   }
+
   fetchStudentByID(id) {
     this.props
       .fetchStudent(id)
@@ -34,15 +35,16 @@ class StudentUpdate extends Component {
 
   onSave(ev) {
     ev.preventDefault();
-    const { schoolId } = this.state;
     const objStudent = {};
 
     Object.assign(objStudent, this.state, { id: this.props.id });
-    if (schoolId === '') objStudent.schoolId = null;
-
-    this.props
-      .updateStudent(objStudent)
-      .then(() => this.props.history.push('/students'));
+    if (objStudent.schoolId === '') objStudent.schoolId = null;
+    if (objStudent.gpa === '') objStudent.gpa = null;
+    if ((objStudent.gpa >= 0 && objStudent.gpa <= 4) || objStudent === null) {
+      this.props
+        .updateStudent(objStudent)
+        .then(() => this.props.history.push('/students'));
+    }
   }
   onDelete(ev) {
     ev.preventDefault();
@@ -51,7 +53,13 @@ class StudentUpdate extends Component {
       .then(() => this.props.history.push('/students'));
   }
   handleChange(ev) {
-    this.setState({ [ev.target.name]: ev.target.value });
+    if ([ev.target.name] === 'studentId' && ev.target.value === null) {
+      this.setState({ studentId: '' });
+    } else if ([ev.target.name] === 'gpa' && ev.target.value === null) {
+      this.setState({ gpa: '' });
+    } else {
+      this.setState({ [ev.target.name]: ev.target.value });
+    }
   }
 
   render() {
