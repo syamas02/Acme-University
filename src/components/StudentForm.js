@@ -49,10 +49,14 @@ const StudentForm = ({ handleChange, onSave, onDelete, schools, student }) => {
       <br />
       <div className="bt">
         <Button
+          name="save"
           disabled={!(student.firstname && student.lastname)}
           color="primary"
           type="submit"
           onClick={onSave}
+          data-toggle="popover"
+          data-trigger="focus"
+          data-content="Click anywhere in the document to close this popover"
         >
           > Save
         </Button>

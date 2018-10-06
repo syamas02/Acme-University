@@ -24,10 +24,11 @@ class StudentCreate extends Component {
     Object.assign(objStudent, this.state, { id: this.props.id });
     if (objStudent.schoolId === '') delete objStudent.schoolId;
     if (objStudent.gpa === '') delete objStudent.gpa;
-
-    this.props
-      .createStudent(objStudent)
-      .then(() => this.props.history.push('/students'));
+    if (!(objStudent.gpa < 0 || objStudent.gpa > 4)) {
+      this.props
+        .createStudent(objStudent)
+        .then(() => this.props.history.push('/students'));
+    }
   }
 
   handleChange(ev) {

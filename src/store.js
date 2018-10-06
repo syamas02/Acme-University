@@ -72,16 +72,15 @@ const createSchool = school => {
     axios
       .post('/api/schools', school)
       .then(response => response.data)
-      .then(school => dispatch(_createSchool(school)));
+      .then(_school => dispatch(_createSchool(_school)));
 };
 
 const createStudent = student => {
-  console.log('student:', student);
   return dispatch =>
     axios
       .post('/api/students', student)
       .then(response => response.data)
-      .then(student => dispatch(_createStudent(student)));
+      .then(_student => dispatch(_createStudent(_student)));
 };
 
 const updateSchool = school => {
@@ -89,7 +88,7 @@ const updateSchool = school => {
     axios
       .put(`/api/schools/${school.id}`, school)
       .then(response => response.data)
-      .then(school => dispatch(_updateSchool(school)));
+      .then(_school => dispatch(_updateSchool(_school)));
 };
 
 const updateStudent = student => {
@@ -117,10 +116,6 @@ const deleteStudent = student => {
       .then(() => dispatch(_deleteStudent(student)));
 };
 
-// const findSchoolById = (id) => (
-
-// )
-
 const schoolsReducer = (state = [], action) => {
   switch (action.type) {
     case LOAD_SCHOOLS:
@@ -134,7 +129,6 @@ const schoolsReducer = (state = [], action) => {
     case UPDATE_SCHOOL:
       state = state.filter(school => school.id !== action.school.id);
       state = [...state, action.school];
-      console.log('state in store');
       break;
 
     case DELETE_SCHOOL: {

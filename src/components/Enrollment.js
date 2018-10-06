@@ -13,24 +13,38 @@ class Enrollment extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.onRegister = this.onRegister.bind(this);
     this.onUnregister = this.onUnregister.bind(this);
+    this.resetState = this.resetState.bind(this);
   }
 
   handleChange(ev) {
     this.setState({ [ev.target.name]: ev.target.value });
   }
+
+  resetState() {
+    this.setState({ id1: '', id2: '' });
+  }
+
   onUnregister(ev) {
     ev.preventDefault();
     console.log('this.state:', this.state);
-    this.props.updateStudent({ id: this.state.id1, schoolId: null });
+    this.props
+      .updateStudent({ id: this.state.id1, schoolId: null })
+      .then(() => {
+        this.resetState();
+      });
   }
 
   onRegister(ev) {
     ev.preventDefault();
     console.log('this.state:', this.state);
-    this.props.updateStudent({
-      id: this.state.id2,
-      schoolId: this.props.id,
-    });
+    this.props
+      .updateStudent({
+        id: this.state.id2,
+        schoolId: this.props.id,
+      })
+      .then(() => {
+        this.resetState();
+      });
   }
 
   render() {
@@ -43,7 +57,7 @@ class Enrollment extends Component {
           <select
             className="myselect"
             name="id1"
-            value={this.state.id1 * 1}
+            value={this.state.id1}
             onChange={handleChange}
           >
             <option value="">--select student to unenroll--</option>
@@ -71,7 +85,7 @@ class Enrollment extends Component {
           <select
             className="myselect"
             name="id2"
-            value={this.state.id2 * 1}
+            value={this.state.id2}
             onChange={handleChange}
           >
             <option value="">--select student to enroll--</option>
