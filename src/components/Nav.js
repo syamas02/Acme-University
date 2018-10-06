@@ -14,15 +14,31 @@ const Nav = ({ schools, students, path }) => {
   return (
     <div>
       <div className="nav">
-        <Link style={selected('/schools')} to="/schools">
-          Schools ({schools.length}){' '}
-        </Link>
-        &nbsp;&nbsp;&nbsp;
-        <Link style={selected('/students')} to="/students">
-          Students ({students.length}){' '}
-        </Link>
+        <ul className="nav nav-tabs">
+          &nbsp;
+          <li className="nav-item">
+            <Link
+              className="nav-link"
+              style={selected('/schools')}
+              to="/schools"
+            >
+              Schools ({schools.length}){' '}
+            </Link>
+          </li>
+          &nbsp;&nbsp;&nbsp;
+          <li className="nav-item">
+            <Link
+              className="nav-link"
+              style={selected('/students')}
+              to="/students"
+            >
+              Students ({students.length}){' '}
+            </Link>
+          </li>
+        </ul>
       </div>
-      <img src="/public/school.jpg" alt="" width="450" height="75" />
+      <h1>Acme Universities</h1>
+      <img src="/public/school.jpg" alt="" width="700" height="100" />
     </div>
   );
 };
