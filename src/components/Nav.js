@@ -38,7 +38,7 @@ const Nav = ({ schools, students, path }) => {
         </ul>
       </div>
       <h1>Acme Universities</h1>
-      <img src="/public/school.jpg" alt="" width="700" height="100" />
+      <img src="/public/university.jpg" alt="" width="700" height="100" />
     </div>
   );
 };

@@ -17,6 +17,9 @@ class StudentUpdate extends Component {
     this.onSave = this.onSave.bind(this);
     this.onDelete = this.onDelete.bind(this);
     this.fetchStudentByID(this.props.id);
+    $(function() {
+      $('[data-toggle="popover"]').popover();
+    });
   }
 
   fetchStudentByID(id) {
@@ -40,10 +43,17 @@ class StudentUpdate extends Component {
     Object.assign(objStudent, this.state, { id: this.props.id });
     if (objStudent.schoolId === '') objStudent.schoolId = null;
     if (objStudent.gpa === '') objStudent.gpa = null;
-    if ((objStudent.gpa >= 0 && objStudent.gpa <= 4) || objStudent === null) {
-      this.props
-        .updateStudent(objStudent)
+    if (
+      (objStudent.gpa >= 0 && objStudent.gpa <= 4) ||
+      objStudent.gpa === null
+    ) {
+      $(function() {
+        $('[data-toggle="popover"]').popover('hide');
+      })
+        .then(() => this.props.updateStudent(objStudent))
         .then(() => this.props.history.push('/students'));
+    } else {
+      console.log('i am here');
     }
   }
   onDelete(ev) {
